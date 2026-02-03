@@ -1,0 +1,230 @@
+/* default margins + padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.grid-container {
+    display: grid;
+    /* sidebar */
+    grid-template-columns: 200px 1fr; 
+
+    /* header + content + footer */
+    grid-template-rows: 100px 1fr 50px; 
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    min-height: 100vh;
+}
+
+/* header */
+.header {
+    grid-area: header;
+    background-color: #ffc936;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* sidebar areaaa */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #f4f4f4;
+    padding: 10px;
+    overflow-y: auto;
+
+    /* flexbox area, create the flexbox!! */
+    display: flex;
+    
+    /* items start at the top */
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* control the navigation list inside the sidebar, easier to align links */
+.sidebar ul {
+    list-style: none;
+
+    /* flexbox area part 2, stack vertically */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* control each individiual navigation item, fixes visuals */
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+
+/* makes the sidebar more "menu" like instead of just links */
+.sidebar a {
+    text-decoration: none;
+    color: #000000;
+}
+
+/* main categories */
+.main-content {
+    grid-area: main;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #fff;
+}
+
+/* footer area */
+.footer {
+    grid-area: footer;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* the tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #333;
+}
+
+/* considers if it's scrollable */
+.main-content {
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+}
+
+
+
+/* add summary sections, IMPORTANT AREA!!!! */
+
+#summary {
+    /* background area */
+    background-color: #fff9e6; 
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #ffc936; 
+}
+
+#summary h2 {
+    font-size: 1.8rem;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+#summary p {
+    font-size: 1rem;
+    color: #555555;
+    line-height: 1.6;
+}
+
+
+/* !!!! education section !!! */
+
+#education {
+    /* lighter green background for boxes */
+    background-color: #cdffd1; 
+    padding: 20px;
+    margin-bottom: 20px;
+    
+    /* header color for boxes */
+    border-left: 5px solid #00572d;
+}
+
+#education h3 {
+    font-size: 1.6rem;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+#education table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#education th {
+    background-color: #003402;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+#education td {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+
+
+/* !!! projects section !!! */
+
+#projects {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    grid-gap: 20px; 
+    padding: 20px;
+}
+
+/* heading spans all of the columns */
+#projects h2 {
+    grid-column: 1 / -1; 
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#projects figcaption {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+
+/* !!! Footer combo into contact info! */
+
+.footer {
+    /* contains the positioning for all it affects */
+    position: relative; 
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+    /* each link on it's own line */
+    display: block; 
+    /* space between lines */
+    margin: 3px 0;  
+}
+
+/* sets in the bottom left of the footer*/
+.footer section {
+    position: relative; 
+    bottom: 10px;
+    text-align: center;
+}
+
+.footer section a {
+    /* makes links or the text next to one another */
+    display: inline-block;  
+    margin: 0 10px;         
+    color: #ffffff;
+    text-decoration: none;
+    /* make text smaller */
+    font-size: 0.9rem;       
+}
+
